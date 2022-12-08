@@ -47,3 +47,11 @@ Big-O gösterimini yazınız.
 5-[11,16,21]-[8,12,22]
 6-[8,11,12,16,21,22]
 BigO :: O(n.logn)
+
+
+
+[Binary Search Tree Projesi]
+[7, 5, 1, 8, 3, 6, 0, 9, 4, 2] dizisinin Binary-Search-Tree aşamalarını yazınız.
+Root = 5 için,
+
+![alt text](binary.png)
