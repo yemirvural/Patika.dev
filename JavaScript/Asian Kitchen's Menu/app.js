@@ -73,6 +73,7 @@ const menu = [
   },
 ];
 
+
 function meal(id, title, category, price, img, desc) {
   const sectionDOM = document.querySelector(".menu-items");
   let div = `<div class="menu-items col-lg-6 col-sm-12">
