@@ -9,13 +9,14 @@ function Todolist({ tasks, setTasks }) {
   }, [request]);
 
   const removeTask = (gorev) => {
-    let index = gorev.id;
     // let index = tasks.findIndex((item) => item.text === gorev.text);
     // tasks.splice(index, 1);
+    let index = gorev.id;
     setTasks((item) => item.filter((son) => son.id !== index))
   };  
-
-  
+  const isCompleted = (task) => {
+    setTasks(tasks.map((item) => item.id === task.id ? {...item, completed: !item.completed} : item))
+  }
 
   return (
     <div>
@@ -25,9 +26,9 @@ function Todolist({ tasks, setTasks }) {
 
         <ul className="todo-list">
           {tasks.map((task) => (
-              <li key={task.id}>
+              <li key={task.id} className={task.completed ? "completed" : ""}>
                 <div className="view">
-                  <input className="toggle" type="checkbox" />
+                  <input className="toggle" type="checkbox" onChange={() => isCompleted(task)}/>
                   <label>{task.text}</label>
                   <button
                     className="destroy"

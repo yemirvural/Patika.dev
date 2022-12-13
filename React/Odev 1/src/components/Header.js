@@ -9,7 +9,7 @@ function Header({ addTask, tasks }) {
       return false
     }
     addTask([...tasks,     {
-      completed: true,
+      completed: false,
       text: `${form}`,
       id: tasks.length + 1,
     }]);
