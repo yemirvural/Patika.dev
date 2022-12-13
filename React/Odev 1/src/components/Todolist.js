@@ -1,32 +1,19 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import List from "./List";
 
-function Todolist() {
+function Todolist({ tasks }) {
   return (
     <div>
-      <section class="main">
-        <input class="toggle-all" type="checkbox" />
-        <label for="toggle-all">Mark all as complete</label>
+      <section className="main">
+        <input className="toggle-all" type="checkbox" />
+        <label htmlFor="toggle-all">Mark all as complete</label>
 
-        <ul class="todo-list">
-          <li class="completed">
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label>Learn JavaScript</label>
-              <button class="destroy"></button>
-            </div>
-          </li>
-          <li>
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label>Learn React</label>
-              <button class="destroy"></button>
-            </div>
-          </li>
-          <li>
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label>Have a life!</label>
-              <button class="destroy"></button>
+        <ul className="todo-list">
+          <li className="">
+          <div className="view">
+                <input className="toggle" type="checkbox" />
+                    <List tasks={tasks}></List>
+                <button className="destroy"></button>
             </div>
           </li>
         </ul>
