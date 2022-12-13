@@ -1,7 +1,22 @@
 import { useEffect, useState } from "react";
-import List from "./List";
 
-function Todolist({ tasks }) {
+function Todolist({ tasks, setTasks }) {
+  const [request, setRequest] = useState(true);
+
+  useEffect(() => {
+    if (request === false) {
+    }
+  }, [request]);
+
+  const removeTask = (gorev) => {
+    let index = gorev.id;
+    // let index = tasks.findIndex((item) => item.text === gorev.text);
+    // tasks.splice(index, 1);
+    setTasks((item) => item.filter((son) => son.id !== index))
+  };  
+
+  
+
   return (
     <div>
       <section className="main">
@@ -9,13 +24,18 @@ function Todolist({ tasks }) {
         <label htmlFor="toggle-all">Mark all as complete</label>
 
         <ul className="todo-list">
-          <li className="">
-          <div className="view">
-                <input className="toggle" type="checkbox" />
-                    <List tasks={tasks}></List>
-                <button className="destroy"></button>
-            </div>
-          </li>
+          {tasks.map((task) => (
+              <li key={task.id}>
+                <div className="view">
+                  <input className="toggle" type="checkbox" />
+                  <label>{task.text}</label>
+                  <button
+                    className="destroy"
+                    onClick={() => removeTask(task)}
+                  ></button>
+                </div>
+              </li>
+            ))}
         </ul>
       </section>
     </div>

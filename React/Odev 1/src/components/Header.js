@@ -8,7 +8,11 @@ function Header({ addTask, tasks }) {
     if(form === ''){
       return false
     }
-    addTask([...tasks, form]);
+    addTask([...tasks,     {
+      completed: true,
+      text: `${form}`,
+      id: tasks.length + 1,
+    }]);
     setForm("")
   }
 
