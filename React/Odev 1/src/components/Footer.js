@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Footer() {
+function Footer({ taskLength }) {
   return (
     <div>
       <footer className="footer">
         <span className="todo-count">
-          <strong>2</strong>
+          <strong>{taskLength}</strong>
           items left
         </span>
 

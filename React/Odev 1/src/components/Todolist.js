@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Todolist({ tasks, setTasks }) {
+function Todolist({ tasks, setTasks, setTaskLength}) {
   const [request, setRequest] = useState(true);
 
   useEffect(() => {
@@ -12,7 +12,8 @@ function Todolist({ tasks, setTasks }) {
     // let index = tasks.findIndex((item) => item.text === gorev.text);
     // tasks.splice(index, 1);
     let index = gorev.id;
-    setTasks((item) => item.filter((son) => son.id !== index))
+    setTasks((item) => item.filter((son) => son.id !== index));
+    setTaskLength(tasks.length - 1);
   };  
   const isCompleted = (task) => {
     setTasks(tasks.map((item) => item.id === task.id ? {...item, completed: !item.completed} : item))
