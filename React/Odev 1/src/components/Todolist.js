@@ -20,7 +20,8 @@ function Todolist({ tasks, setTasks }) {
 
   const completedAll = () => {
     // Burada ki buglar düzeltilecek...
-    setTasks(tasks.map((item) => ({...item, completed: true})));
+    tasks.forEach((e) => e.completed === false ? setTasks(tasks.map((item) => ({...item, completed: true}))) : setTasks(tasks.map((item) => ({...item, completed: false}))))
+    
   }
   
   return (
@@ -31,7 +32,7 @@ function Todolist({ tasks, setTasks }) {
 
         <ul className="todo-list">
           {tasks.map((task) => (
-              <li key={task.id} className={task.completed ? "completed" : ""}>
+              <li key={task.id} className={task.completed ? "completed" : ""}>  
                 <div className="view">
                   <input className="toggle" type="checkbox" checked={task.completed === true } onChange={() => isCompleted(task)}/>
                   <label>{task.text}</label>
