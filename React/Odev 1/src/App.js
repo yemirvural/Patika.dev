@@ -23,7 +23,7 @@ function App() {
     }
   ]);
   const [taskLength, setTaskLength] = useState(tasks.length);
-  
+
   useEffect(() => {
     console.log(tasks);
   }, [tasks]);
@@ -31,8 +31,8 @@ function App() {
   return (
     <div className="App">
       <Header addTask={setTasks} tasks={tasks} taskLength={taskLength} setTaskLength={setTaskLength} />
-      <Todolist tasks={tasks} setTasks={setTasks} setTaskLength={setTaskLength}/>
-      <Footer taskLength={taskLength} />
+      <Todolist tasks={tasks} setTasks={setTasks} setTaskLength={setTaskLength} taskLength={taskLength}/>
+      <Footer tasks={tasks} taskLength={taskLength}/>
     </div>
   );
 }

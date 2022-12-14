@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Todolist({ tasks, setTasks, setTaskLength}) {
+function Todolist({ tasks, setTasks, setTaskLength, taskLength }) {
   const [request, setRequest] = useState(true);
 
   useEffect(() => {
@@ -21,13 +21,12 @@ function Todolist({ tasks, setTasks, setTaskLength}) {
 
   const completedAll = () => {
     // Burada ki buglar düzeltilecek...
-    tasks.forEach((e) => e.completed === false ? setTasks(tasks.map((item) => ({...item, completed: true}))) : setTasks(tasks.map((item) => ({...item, completed: false}))))
-    
+    tasks.forEach((e) => e.completed === false ? setTasks(tasks.map((item) => ({...item, completed: true}))) : setTasks(tasks.map((item) => ({...item, completed: false})))) 
   }
-  
+
   return (
     <div>
-      <section className="main">
+      <section className={taskLength === 0 ? 'hidden main' : "main"}>
         <input className="toggle-all" id="toggle-all" type="checkbox" onChange={() => completedAll()} />
         <label htmlFor="toggle-all">Mark all as complete</label>
 

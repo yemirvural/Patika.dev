@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Header({ addTask, tasks, setTaskLength }) {
+function Header({ addTask, tasks, setTaskLength}) {
   const [form, setForm] = useState("");
 
   const onSubmit = (e) => {
@@ -16,7 +16,7 @@ function Header({ addTask, tasks, setTaskLength }) {
     setForm("")
     setTaskLength(tasks.length + 1);
   }
-
+  
   return (
     <div>
       <header className="header">
