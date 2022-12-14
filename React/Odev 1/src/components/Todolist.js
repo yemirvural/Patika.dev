@@ -22,7 +22,7 @@ function Todolist({ tasks, setTasks }) {
     // Burada ki buglar düzeltilecek...
     setTasks(tasks.map((item) => ({...item, completed: true})));
   }
-
+  
   return (
     <div>
       <section className="main">
@@ -33,7 +33,7 @@ function Todolist({ tasks, setTasks }) {
           {tasks.map((task) => (
               <li key={task.id} className={task.completed ? "completed" : ""}>
                 <div className="view">
-                  <input className="toggle" type="checkbox" onChange={() => isCompleted(task)}/>
+                  <input className="toggle" type="checkbox" checked={task.completed === true } onChange={() => isCompleted(task)}/>
                   <label>{task.text}</label>
                   <button
                     className="destroy"
