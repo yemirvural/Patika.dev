@@ -18,10 +18,15 @@ function Todolist({ tasks, setTasks }) {
     setTasks(tasks.map((item) => item.id === task.id ? {...item, completed: !item.completed} : item))
   }
 
+  const completedAll = () => {
+    // Burada ki buglar düzeltilecek...
+    setTasks(tasks.map((item) => ({...item, completed: true})));
+  }
+
   return (
     <div>
       <section className="main">
-        <input className="toggle-all" type="checkbox" />
+        <input className="toggle-all" id="toggle-all" type="checkbox" onChange={() => completedAll()} />
         <label htmlFor="toggle-all">Mark all as complete</label>
 
         <ul className="todo-list">
