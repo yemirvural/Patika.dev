@@ -1,5 +1,6 @@
 import { all } from "axios";
 import { useEffect, useState } from "react";
+import { act } from "react-dom/test-utils";
 
 function Todolist({ tasks, setTasks, setTaskLength, taskLength, removeTask, isCompleted, completedAll }) {
   const [request, setRequest] = useState(true);
@@ -22,6 +23,7 @@ function Todolist({ tasks, setTasks, setTaskLength, taskLength, removeTask, isCo
       </div>
     </li>
   ))
+  const activeTasks = allTasks.filter((el) => el.completed != true)
   let printTasks = (array) => array.filter((i) => i);
 
 return (
@@ -31,7 +33,7 @@ return (
         <label htmlFor="toggle-all">Mark all as complete</label>
 
         <ul className="todo-list">
-          {printTasks(allTasks)} 
+          {printTasks(allTasks)}
         </ul>
       </section>
     </div>
