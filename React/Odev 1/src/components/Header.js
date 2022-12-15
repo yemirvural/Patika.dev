@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 function Header({ addTask, tasks, setTaskLength}) {
   const [form, setForm] = useState("");
+
+  const ref = useRef(null);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +24,7 @@ function Header({ addTask, tasks, setTaskLength}) {
       <header className="header">
           <h1>todos</h1>
           <form onSubmit={onSubmit}>
-            <input className="new-todo" placeholder="What needs to be done?" value={form} onChange={(e) => setForm(e.target.value)} autoFocus />
+            <input className="new-todo" placeholder="What needs to be done?" value={form} onChange={(e) => setForm(e.target.value)} autoFocus ref={ref} />
           </form>
       </header>
     </div>

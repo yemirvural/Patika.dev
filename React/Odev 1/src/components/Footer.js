@@ -1,22 +1,47 @@
 import React, { useState } from "react";
+import Todolist from "./Todolist";
 
-function Footer({ tasks, taskLength }) {
-  const showAll = () =>{
-    console.log(tasks)
-  }
-  const showActive= () =>{
-    console.log("show active")
-  }
-  const showCompleted = () =>{
-    console.log("show completed")
-  }
-  
-  const filtered = tasks.filter(employee => {
-    return employee.country === 'Canada';
-  });
+function Footer({ tasks, taskLength, removeTask, isCompleted, setTasks }) {
+  const showAll = () => {
+    filteredList(tasks.map((el) => el));
+  };
+  const showActive = () => {
+    filteredList(tasks.filter((el) => el.completed !== true));
+  };
+  const showCompleted = () => {
+    filteredList(tasks.filter((el) => el.completed !== false));
+  };
+
+  const ahmet = () => {
+    tasks.forEach((e) => e.filter((a) => a.completed !== false));
+  };
+
+
+  const filteredList = (arrayList) =>{
+   return ( <ul>
+   {arrayList.map((i) => 
+   {
+   
+ 
+   
+     <li key={i.id} className={i.completed ? "completed" : ""}>
+          <div className="view">
+            <input
+              className="toggle"
+              type="checkbox"
+              checked={i.completed === true}
+              onChange={() => isCompleted(i)}
+            />
+            <label>{i.text}</label>
+            <button className="destroy" onClick={() => removeTask(i)}></button>
+          </div>
+        </li>
+          }
+         )}
+          </ul>)}
 
   return (
-    <div className={taskLength === 0 ? 'hidden' : taskLength}>
+    <div className={taskLength === 0 ? "hidden" : taskLength}>
       <footer className="footer">
         <span className="todo-count">
           <strong>{taskLength}</strong>
@@ -25,20 +50,28 @@ function Footer({ tasks, taskLength }) {
 
         <ul className="filters">
           <li>
-            <a href="#/" className="selected" onClick={() => showAll()}>All</a>
+            <a href="#/" className="selected" onClick={() => showAll()}>
+              All
+            </a>
           </li>
           <li>
-            <a href="#/"  onClick={() => showActive()}>Active</a>
+            <a href="#/" onClick={() => showActive()}>
+              Active
+            </a>
           </li>
           <li>
-            <a href="#/"  onClick={() => showCompleted()}>Completed</a>
+            <a href="#/" onClick={() => showCompleted()}>
+              Completed
+            </a>
           </li>
         </ul>
 
-        <button className="clear-completed">Clear completed</button>
+        <button className="clear-completed" onClick={() => ahmet()}>
+          Clear completed
+        </button>
       </footer>
     </div>
   );
 }
 
-export default Footer;
+export default Footer; 
