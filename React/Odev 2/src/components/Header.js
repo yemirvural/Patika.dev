@@ -10,10 +10,11 @@ function Header({ addTask, tasks, setTaskLength}) {
     if(form === ''){
       return false
     }
+    /// id number so important ! 
     addTask([...tasks,     {
       completed: false,
       text: `${form}`,
-      id: tasks.length + 1,
+      id: tasks[(tasks.length - 1)].id + 1,
     }]);
     setForm("")
     setTaskLength(tasks.length + 1);

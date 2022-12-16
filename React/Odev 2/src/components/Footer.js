@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
-function Footer({ tasks, taskLength, removeTask, isCompleted, showAll, showActive, showCompleted, isFiltered, setIsFiltered }) {
+function Footer({ tasks, setTasks, taskLength, removeTask, isCompleted, showAll, showActive, showCompleted, isFiltered, setIsFiltered }) {
+  
+  console.log(tasks)
   const ahmet = () => {
-    tasks.forEach((e) => e.filter((a) => a.completed != false));
+    setTasks((item) => item.filter((el) => el.completed !== true))
   };
 
   return (
