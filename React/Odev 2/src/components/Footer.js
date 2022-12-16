@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Footer({ tasks, taskLength, removeTask, isCompleted, showAll, showActive, showCompleted }) {
+function Footer({ tasks, taskLength, removeTask, isCompleted, showAll, showActive, showCompleted, isFiltered }) {
   const ahmet = () => {
     tasks.forEach((e) => e.filter((a) => a.completed != false));
   };
@@ -14,17 +14,17 @@ function Footer({ tasks, taskLength, removeTask, isCompleted, showAll, showActiv
         </span>
         <ul className="filters">
           <li>
-            <a href="#/" className="selected" onClick={() => showAll()}>
+            <a href="#/" className={isFiltered.filterType === 0 ? "selected" : ""} onClick={showAll}>
               All
             </a>
           </li>
           <li>
-            <a href="#/" onClick={() => showActive()}>
+            <a href="#/" className={isFiltered.filterType === 1 ? "selected" : ""} onClick={showActive}>
               Active
             </a>
           </li>
           <li>
-            <a href="#/" onClick={() => showCompleted()}>
+            <a href="#/" className={isFiltered.filterType === 2 ? "selected" : ""} onClick={showCompleted}>
               Completed
             </a>
           </li>
