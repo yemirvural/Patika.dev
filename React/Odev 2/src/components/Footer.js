@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-function Footer({ tasks, taskLength, removeTask, isCompleted, showAll, showActive, showCompleted, isFiltered }) {
+function Footer({ tasks, taskLength, removeTask, isCompleted, showAll, showActive, showCompleted, isFiltered, setIsFiltered }) {
   const ahmet = () => {
     tasks.forEach((e) => e.filter((a) => a.completed != false));
   };
 
   return (
-    <div className={taskLength === 0 ? "hidden" : taskLength}>
+    // hidden classı çok kullanışsız olduğu için kaldırıldı.
+    <div className={taskLength === 0 ? "hidden-off" : taskLength}>
       <footer className="footer">
         <span className="todo-count">
           <strong>{taskLength}</strong>
@@ -14,17 +15,17 @@ function Footer({ tasks, taskLength, removeTask, isCompleted, showAll, showActiv
         </span>
         <ul className="filters">
           <li>
-            <a href="#/" className={isFiltered.filterType === 0 ? "selected" : ""} onClick={showAll}>
+            <a href="#/" className={isFiltered.filterType === 0 ? "selected" : ""} onClick={() => setIsFiltered({filtered: false, filterType:0})}>
               All
             </a>
           </li>
           <li>
-            <a href="#/" className={isFiltered.filterType === 1 ? "selected" : ""} onClick={showActive}>
+            <a href="#/" className={isFiltered.filterType === 1 ? "selected" : ""} onClick={() => setIsFiltered({filtered: true, filterType:1})}>
               Active
             </a>
           </li>
           <li>
-            <a href="#/" className={isFiltered.filterType === 2 ? "selected" : ""} onClick={showCompleted}>
+            <a href="#/" className={isFiltered.filterType === 2 ? "selected" : ""} onClick={() => setIsFiltered({filtered: true, filterType:2})}>
               Completed
             </a>
           </li>
