@@ -58,7 +58,7 @@ function App() {
   // const showCompleted = () => {
   //   setIsFiltered({filtered: true, filterType:2})
   // };
-
+  
   const printTasks = () => isFiltered.filtered ? filteredListt() : printScreen(tasks.filter(i => i));
   
   const filteredListt = () => printScreen(tasks.filter(i => i.completed ==! (isFiltered.filterType === 1 ? true : false)));
@@ -69,7 +69,14 @@ function App() {
    <li key={el.id} className={el.completed ? "completed" : ""}>  
       <div className="view">
         <input className="toggle" type="checkbox" checked={el.completed === true } onChange={() => isCompleted(el)}/>
-        <label>{el.text}</label>
+        <label>
+          <input
+                name="fname"
+                type="text"
+                value={el.text}
+                className={"todo-task"}
+            />
+        </label>
         <button
           className="destroy"
           onClick={() => removeTask(el)}
