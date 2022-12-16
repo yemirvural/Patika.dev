@@ -58,7 +58,10 @@ function App() {
   // const showCompleted = () => {
   //   setIsFiltered({filtered: true, filterType:2})
   // };
-  
+  const onInputChange = (e) => {
+    setTasks((task) => task.map((el) => el.id == e.target.id ? {...el, text: e.target.value} : el));
+  }
+
   const printTasks = () => isFiltered.filtered ? filteredListt() : printScreen(tasks.filter(i => i));
   
   const filteredListt = () => printScreen(tasks.filter(i => i.completed ==! (isFiltered.filterType === 1 ? true : false)));
@@ -71,10 +74,12 @@ function App() {
         <input className="toggle" type="checkbox" checked={el.completed === true } onChange={() => isCompleted(el)}/>
         <label>
           <input
-                name="fname"
+                name={"text"}
+                id={el.id}
                 type="text"
                 value={el.text}
                 className={"todo-task"}
+                onChange={onInputChange}
             />
         </label>
         <button
