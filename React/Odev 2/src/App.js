@@ -28,9 +28,9 @@ function App() {
   
   const [isFiltered, setIsFiltered] = useState({filtered: false, filterType: 0});
 
-  useEffect(() => {
-    console.log(tasks);
-  }, [tasks]);
+   useEffect(() => {
+     console.log(tasks);
+   }, [tasks]);
 
   const removeTask = (gorev) => {
     // let index = tasks.findIndex((item) => item.text === gorev.text);

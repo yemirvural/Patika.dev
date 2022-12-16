@@ -14,7 +14,7 @@ function Header({ addTask, tasks, setTaskLength}) {
     addTask([...tasks,     {
       completed: false,
       text: `${form}`,
-      id: tasks[(tasks.length - 1)].id + 1,
+      id: tasks.length === 0 ? 1 : (tasks[(tasks.length - 1)].id + 1),
     }]);
     setForm("")
     setTaskLength(tasks.length + 1);

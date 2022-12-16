@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 function Footer({ tasks, setTasks, taskLength, removeTask, isCompleted, showAll, showActive, showCompleted, isFiltered, setIsFiltered }) {
   
-  console.log(tasks)
-  const ahmet = () => {
+  const clearAll = () => {
     setTasks((item) => item.filter((el) => el.completed !== true))
   };
 
@@ -33,7 +32,7 @@ function Footer({ tasks, setTasks, taskLength, removeTask, isCompleted, showAll,
           </li>
         </ul>
 
-        <button className="clear-completed" onClick={() => ahmet()}>
+        <button className="clear-completed" onClick={() => clearAll()}>
           Clear completed
         </button>
       </footer>
