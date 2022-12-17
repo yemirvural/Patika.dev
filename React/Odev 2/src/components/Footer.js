@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Footer({ tasks, setTasks, taskLength, removeTask, isCompleted, showAll, showActive, showCompleted, isFiltered, setIsFiltered }) {
+function Footer({ setTasks, taskLength, isFiltered, setIsFiltered }) {
   
   const clearAll = () => {
     setTasks((item) => item.filter((el) => el.completed !== true))

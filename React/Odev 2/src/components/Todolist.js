@@ -1,9 +1,6 @@
-import { all } from "axios";
-import { useEffect, useState } from "react";
-import { act } from "react-dom/test-utils";
 
-function Todolist({ tasks, setTasks, setTaskLength, taskLength, removeTask, isCompleted, completedAll, isFiltered, printTasks, filteredListt, printScreen }) {
-  const [request, setRequest] = useState(true);
+function Todolist({ taskLength, completedAll, printTasks }) {
+
 
 
 return (

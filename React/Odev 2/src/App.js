@@ -22,10 +22,9 @@ function App() {
       id: 3,
     }
   ]);
+
   const [taskLength, setTaskLength] = useState(tasks.length);
-   
   // const [filteredList, setFilteredList] = useState(tasks);
-  
   const [isFiltered, setIsFiltered] = useState({filtered: false, filterType: 0});
 
    useEffect(() => {
@@ -42,7 +41,6 @@ function App() {
   const isCompleted = (task) => {
     setTasks(tasks.map((item) => item.id === task.id ? {...item, completed: !item.completed} : item))
   }
-
   const completedAll = () => {
     // Burada ki buglar düzeltilecek...
     tasks.forEach((e) => e.completed === false ? setTasks(tasks.map((item) => ({...item, completed: true}))) : setTasks(tasks.map((item) => ({...item, completed: false})))) 
@@ -58,13 +56,14 @@ function App() {
   // const showCompleted = () => {
   //   setIsFiltered({filtered: true, filterType:2})
   // };
+
   const onInputChange = (e) => {
+    // eslint-disable-next-line eqeqeq
     setTasks((task) => task.map((el) => el.id == e.target.id ? {...el, text: e.target.value} : el));
   }
 
-  const printTasks = () => isFiltered.filtered ? filteredListt() : printScreen(tasks.filter(i => i));
-  
-  const filteredListt = () => printScreen(tasks.filter(i => i.completed ==! (isFiltered.filterType === 1 ? true : false)));
+  const printTasks = () => isFiltered.filtered ? filteredList() : printScreen(tasks.filter(i => i));
+  const filteredList = () => printScreen(tasks.filter(i => i.completed !== (isFiltered.filterType === 1 ? true : false)));
 
   const printScreen = (array) => { 
     setTaskLength(array.length);
@@ -92,9 +91,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header addTask={setTasks} tasks={tasks} taskLength={taskLength} setTaskLength={setTaskLength} />
-      <Todolist tasks={tasks} setTasks={setTasks} setTaskLength={setTaskLength} taskLength={taskLength} removeTask={removeTask} isCompleted={isCompleted} completedAll={completedAll} isFiltered={isFiltered} printTasks={printTasks} filteredListt={filteredListt} printScreen={printScreen}/>
-      <Footer tasks={tasks} taskLength={taskLength} setTasks={setTasks} removeTask={removeTask} isCompleted={isCompleted} isFiltered={isFiltered} setIsFiltered={setIsFiltered} />
+      <Header addTask={setTasks} tasks={tasks} setTaskLength={setTaskLength} />
+      <Todolist printTasks={printTasks} completedAll={completedAll} taskLength={taskLength} />
+      <Footer taskLength={taskLength} setTasks={setTasks}isFiltered={isFiltered} setIsFiltered={setIsFiltered} />
     </div>
   );
 }
