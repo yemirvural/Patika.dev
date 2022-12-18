@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const WeatherContext = createContext();
 
@@ -11,5 +11,4 @@ export const WeatherProvider = ({children}) =>{
 
     return <WeatherContext.Provider value={values}>{children}</WeatherContext.Provider>;
 };
-
-export default WeatherContext;
+export const useWeather = () => useContext(WeatherContext);

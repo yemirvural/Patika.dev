@@ -10,7 +10,7 @@
 .inputContainer{
     display: flex;
     width: 145px;
-    align-items: center;
+    align-items:center;
     background-color: white;
     height: 35px;
     border: 0;
@@ -21,6 +21,7 @@
 }
 
 .header input{
+    cursor: pointer;
     font-family: sans-serif;
     width: 105px;
     background-color: white;
@@ -30,4 +31,8 @@
     padding: 0px 10px;
     font-size: 14px;
     font-weight: bold;
+}
+.header span{
+    display: flex;
+    cursor: pointer;
 }

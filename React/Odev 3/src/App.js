@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import { WeatherProvider } from './context/WeatherContext';
+import { LocationProvider } from './context/LocationContext';
 import Container from './component/container';
 
 
 function App() {
   return (
-    <WeatherProvider>
+    <LocationProvider>
       <Container />
-    </WeatherProvider>
+    </LocationProvider>
   );
 }
 

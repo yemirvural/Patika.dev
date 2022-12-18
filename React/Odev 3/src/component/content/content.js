@@ -1,65 +1,30 @@
 import React from 'react'
-import styles from './styles.module.css'; 
+import styles from './styles.module.css';
+import { useWeather } from "../../context/WeatherContext";
 
 function Content() {
+  const { weather, setWeather } = useWeather();
+
+  const dayCheck = (dt) => new Date(dt).toLocaleDateString("en-EN", { weekday: 'long' })
+
+  const contentPrinter = (array) => {
+    return (array.map((el, key) =>
+      <div key={key} className={styles.item}>
+        <span>{dayCheck(el.dt_txt)}</span>
+        <img src={`http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`} alt="" />
+        <div>
+          <span>{Math.floor(el.main.temp_max - 273,15)}°C</span>
+          <span>{Math.floor(el.main.temp_min - 273,15)}°C</span>
+        </div>
+      </div>
+    )
+    )
+  }
+
+
   return (
     <div className={styles.main} >
-      <div className={styles.itemm}>
-        <span>Wed</span>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt=""/>
-        <div>
-          <span>78*</span>
-          <span>67*</span>
-        </div>
-      </div>
-      <div className={styles.item}>
-        <span>Thu</span>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt=""/>
-        <div>
-          <span>78*</span>
-          <span>67*</span>
-        </div>
-      </div>
-      <div className={styles.item}>
-        <span>Fri</span>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt=""/>
-        <div>
-          <span>78*</span>
-          <span>67*</span>
-        </div>
-      </div>
-      <div className={styles.item}>
-        <span>Wed</span>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt=""/>
-        <div>
-          <span>78*</span>
-          <span>67*</span>
-        </div>
-      </div>
-      <div className={styles.item}>
-        <span>Wed</span>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt=""/>
-        <div>
-          <span>78*</span>
-          <span>67*</span>
-        </div>
-      </div>
-      <div className={styles.item}>
-        <span>Wed</span>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt=""/>
-        <div>
-          <span>78*</span>
-          <span>67*</span>
-        </div>
-      </div>
-      <div className={styles.item}>
-        <span>Wed</span>
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt=""/>
-        <div>
-          <span>78*</span>
-          <span>67*</span>
-        </div>
-      </div>
+      {contentPrinter(weather)}
     </div>
   )
 }

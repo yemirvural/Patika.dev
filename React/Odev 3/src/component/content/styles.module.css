@@ -31,9 +31,17 @@ body{
     border: 2px solid #d6d3d379;
     background-color: #f8f9fa;
 }
+.itemm span{
+    color: #8b8b8b;
+    margin: 4px;
+}
 .item span{
     color: #8b8b8b;
+    margin: 4px;
+}
+.itemm img{
+    width: 75px;
 }
 .item img{
-    width: 75   px;
+    width: 75px;
 }
