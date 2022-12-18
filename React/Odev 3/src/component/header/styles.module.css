@@ -1,0 +1,33 @@
+.header{
+    padding: 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 768px;
+    height: 35px;
+    background-color: #f5f9fc;
+}   
+.inputContainer{
+    display: flex;
+    width: 145px;
+    align-items: center;
+    background-color: white;
+    height: 35px;
+    border: 0;
+    outline: none;
+    padding: 0px 5px;
+    border-radius: 10px;
+    border: 2px solid #bfc3c5;
+}
+
+.header input{
+    font-family: sans-serif;
+    width: 105px;
+    background-color: white;
+    height: 30px;
+    border: 0;
+    outline: none;
+    padding: 0px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}

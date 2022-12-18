@@ -1,0 +1,8 @@
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 23vh;
+    background-color: white;
+}

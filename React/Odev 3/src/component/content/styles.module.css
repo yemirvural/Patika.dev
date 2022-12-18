@@ -1,0 +1,39 @@
+body{
+    font-family: sans-serif;
+}
+.main{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.item{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 12%;
+    border: 0;
+    background-color: white;
+}
+.itemm{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 12%;
+    border: 2px solid #d6d3d379;
+    background-color: #f8f9fa;
+}
+.item span{
+    color: #8b8b8b;
+}
+.item img{
+    width: 75   px;
+}
