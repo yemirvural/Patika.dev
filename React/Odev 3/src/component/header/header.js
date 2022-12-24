@@ -14,7 +14,7 @@ function Header() {
 
   const findCoordinates = (e) => {
     e.preventDefault()
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=62f83832ffdb4576f002862151ac0562`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=5&appid=${API_KEY}`)
       .then((res) => res.json())
       .then((data) => {
         setCoordinates({ lon: data[0].lon, lat: data[0].lat })
@@ -28,7 +28,7 @@ function Header() {
 
   const findLocation = () => {
     console.log(coordinates)
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=62f83832ffdb4576f002862151ac0562`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${API_KEY}`)
       .then((res) => res.json())
       .then((data) => {
         const allData = [data.list[4], data.list[12], data.list[20], data.list[28], data.list[36]]; // Data coming per days at 12.00'clock weather forecast
