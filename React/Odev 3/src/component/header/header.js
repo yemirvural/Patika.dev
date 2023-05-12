@@ -22,10 +22,6 @@ function Header() {
       .catch((error) => console.log(error))
   }
 
-  useEffect(()=>{
-    findLocation()
-  }, [coordinates]);
-
   const findLocation = () => {
     console.log(coordinates)
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${API_KEY}`)
