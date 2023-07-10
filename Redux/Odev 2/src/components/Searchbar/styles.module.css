@@ -1,0 +1,18 @@
+.div{
+    display: flex;
+    width: 100%;
+    height: max-content;
+    margin: 15px;
+    margin-top: 5%;
+    justify-content: center;
+}
+.input{
+    display: flex;
+    width: 200px;
+    height: 35px;
+    border: 1px solid grey;
+    border-radius: 25px;
+    padding: 5px 20px;
+    outline: none;
+
+}
