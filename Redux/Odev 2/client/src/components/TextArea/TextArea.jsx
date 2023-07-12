@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from './styles.module.css'
 import { BsCheck2 } from "react-icons/bs";
-import { useDispatch, useSelector } from 'react-redux';
-import { addNote } from '../../features/noteSlice'
+import { useDispatch } from 'react-redux';
+import { addNoteAsync } from '../../features/noteSlice'
 
 
 function TextArea() {
@@ -10,19 +10,15 @@ function TextArea() {
   const [noteType, setNoteType] = useState("")
 
   const dispatch = useDispatch()
-  const allNotes = useSelector((state) => state.note)
-  
-  const submitHandler = (e) => {
+
+  const submitHandler = async(e) => {
     e.preventDefault()
-    if(note && noteType){
-      dispatch(addNote({type: noteType, content: note}))
-      setNote('')
-    }
-    if(!noteType) alert('Please select a color.')
-    if(!note) alert('Please enter a valid note.')
+    if(!noteType) return alert('Please select a color.')
+    if(!note) return alert('Please enter a valid note.')
+    await dispatch(addNoteAsync({type: noteType, content: note}))
+    setNote('')
   }
 
-  console.log(allNotes)
   return (
     <div className={styles.div}>
         <textarea 
