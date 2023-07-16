@@ -1,0 +1,78 @@
+.cardWrapper{
+    max-width: 100%;
+    background-color: #fff;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+.cardWrapper img{
+    display: block;
+    margin: 15px auto;
+    height: 120px;
+    max-width: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.itemName{
+    font-size: 22px;
+    font-weight: 700;
+}
+.itemCost{
+    font-size: 20px;
+    color: #24c486;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+.itemControls{
+    font-size: 16px;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px 10px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.cardWrapper button{
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 3px;
+    color: #fff;
+    border: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    font-size: 16px;
+    font-weight: 700;
+}
+.cardWrapper button:disabled{
+    background: #f1f2f6!important;
+    color: #333;
+    pointer-events: none;
+}
+.cardWrapper input{
+    width: 84px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.cardWrapper .buyButton{
+    background: linear-gradient(180deg,#2ecc71,#1abc9c);
+}
+.cardWrapper .sellButton{
+    background: linear-gradient(180deg,#f53b82,#f53b57);
+    border: none;
+    touch-action: manipulation;
+}
+
+  

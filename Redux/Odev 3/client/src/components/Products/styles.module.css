@@ -1,0 +1,12 @@
+.productsWrapper{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-gap: 10px 10px;
+    padding-bottom: 10px;
+}
+.fetchStatus{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

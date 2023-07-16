@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f2f6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto','Roboto Condensed', sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    margin-top: 45px;
+}
+button{
+    border: 0;
+    cursor: pointer;
+}
+.signature{
+    position: absolute;
+    top: 5px;
+}
