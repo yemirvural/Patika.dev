@@ -1,0 +1,57 @@
+.card {
+    width: 15%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    height: 110px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card button {
+    -webkit-backface-visibility: hidden;
+    border: 0;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: 0.6s;
+    background: #f4f5f7;
+}
+.card .front {
+    font-size: 50px;
+    line-height: 120px;
+    cursor: pointer;
+    color: #b9bfcc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card .back {
+    transform: rotateY(180deg);
+    line-height: 110px;
+}
+.card .back img {
+    vertical-align: middle;
+    width: 70%;
+}
+.card.opened {
+    transform: rotateY(180deg);
+}
+.card.matched {
+    transform: rotateY(180deg);
+}
+.card.matched .back {
+    box-shadow: 0 0 0 2px rgba(#000,.05) inset;
+    animation-fill-mode: both;
+    opacity: .2;
+}

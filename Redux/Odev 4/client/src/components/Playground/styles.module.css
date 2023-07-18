@@ -1,0 +1,26 @@
+.div{
+    padding:35px;
+    width:40%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+.reset{
+    border: 0;
+    background: transparent;
+}
+.reset:hover{
+    background-color: grey;
+    color: white;
+}
+.playground{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    perspective: 1000px;
+    margin-bottom: -15px;
+}
+.score{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
