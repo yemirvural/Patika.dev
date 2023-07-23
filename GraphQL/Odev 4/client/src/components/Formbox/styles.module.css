@@ -1,0 +1,14 @@
+.formWrapper{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    background-color: #eaecef;
+    border-radius: 5px;
+    padding: 75px 0;
+}
+.formWrapper form{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    width: 80%;
+}
