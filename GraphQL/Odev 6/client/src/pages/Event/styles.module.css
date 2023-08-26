@@ -1,0 +1,11 @@
+.infoSection * {
+    background-color: #eaecef;
+    border-radius: 5px;
+}
+.descriptionSection {
+    margin-top: 15px;
+}
+.participantSection {
+    margin-top: 15px;
+    width: 250px;
+}
