@@ -1,0 +1,48 @@
+type Query{
+    countries: [Country!]!
+    country(code: String!): Country!
+
+    continents: [Continent!]!
+    continent(code: String): Continent!
+
+    languages: [Language!]!
+    language(code: String!): Language!
+
+
+}
+type Country{
+    name: String!
+    emoji: String!
+    native: String!
+    phone: [Int!]!
+    continent: Continent
+    capital: String!
+    currency: [String!]!
+    languages: [Language]
+}
+
+type Continent{
+    code: ID
+    countries: [Country]
+    name: String
+}
+
+type Language{
+    code: ID!
+    name: String!
+    native: String!
+    rtl: Boolean!
+}
+
+type Subdivision{
+    code: ID!
+    emoji: String
+    name: String!
+}
+
+type State{
+    code: String
+    country: Country!
+    name: String!
+}
+
