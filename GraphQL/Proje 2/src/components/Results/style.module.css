@@ -1,0 +1,314 @@
+.header {
+    align-items: center;
+    background: linear-gradient(180deg, #fbc300, #c98a00);
+    background-image: url(/cover.webp);
+    background-image: url(/cover.webp), linear-gradient(180deg, #fbc300, #c98a00);
+    background-position: 50%;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 368px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.headerTitle {
+    font-size: 38px;
+    font-weight: 300;
+}
+
+.submitButton {
+    padding: 0;
+    overflow: visible;
+    font: inherit;
+    line-height: normal;
+    color: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.searchbox {
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    max-width: 740px;
+    min-width: 20%;
+
+}
+
+.submitButton {
+    color: #e2a400;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    padding: 0 1rem 0 2rem;
+}
+
+.resetButton {
+    align-items: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    right: 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+
+.searchInput {
+    background-color: #fff;
+    border-radius: 8px;
+    font-family: Hind, sans-serif;
+    height: 64px;
+    padding: 0 48px 0 64px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 48px 0 rgba(0, 0, 0, .2);
+    color: var(--color);
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    min-height: 54px;
+    outline: none;
+    padding-left: 64px;
+    width: 100%;
+}
+
+.searchInput::placeholder {
+    color: var(--placeholder-color);
+    opacity: 1;
+    /* Firefox */
+}
+
+.searchInput:-ms-input-placeholder {
+    color: var(--placeholder-color);
+}
+
+.searchInput::-ms-input-placeholder {
+    color: var(--placeholder-color);
+}
+
+.resetIcon {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+}
+
+.resultsWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.resultsHeader {
+    border-bottom: 1px solid #ebecf3;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    align-items: center;
+    height: auto;
+}
+
+.resultsOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-height: 17px;
+}
+.resultsOption label {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.select {
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    color: #21243d;
+    color: var(--ais-color);
+    font-family: inherit;
+    min-width: 100px;
+    font-size: .75rem;
+    cursor: pointer;
+
+}
+
+.resultsBody {
+    color: var(--ais-color);
+    font-size: .75rem;
+    display: flex;
+    justify-content: center;
+}
+
+.resultItem{
+    height: 275px;
+    color: #21243d;
+    line-height: 18px;
+    font-size: 14px;
+    text-align: start;
+    max-width: 207px;
+}
+
+.itemHighlight{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.itemCategory{
+    color: #21243d;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 8px;
+    opacity: .7;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.itemDescription{
+    margin-top: 2px;
+    box-sizing: border-box;
+    font-size: .9rem;
+    max-width: 175px;
+}
+
+.resultsList {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 680px) {
+    .resultsList {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .resultsList {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1200px) {
+    .resultsList {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.itemHeader{
+    align-items: center;
+    display: flex;
+    height: 174px;
+    justify-content: center;
+    width: 174px;
+}
+.itemHeader img{
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.footer{
+    margin: 4rem 0;
+    color: var(--pagination-color);
+}
+
+.paginationList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    user-select: none;
+}
+.paginationList li:last-child{
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+.disabledButton{
+    opacity: .33;
+    cursor: not-allowed !important;
+}
+
+.paginationItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 38px;
+    width: 38px;
+    background-color: rgba(65,66,71,.08);
+    background-color: var(--refinement-background-color);
+    border-radius: 4px;
+    color: #414247;
+    color: var(--pagination-color);
+    margin-right: 4px;
+}
+.paginationItem a{
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectedButton{
+    background-color: var(--background-color2);
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,.34),hsla(0,0%,100%,0));
+    font-weight: 700;
+    color: #fff;
+}
+
+.paginationController{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    margin-right: 1rem;
+    cursor: pointer;
+    height: 38px;
+    width: 38px;
+}
+.paginationController button{
+    width: 38px !important;
+    height: 38px !important;
+}
+.highlighted{
+    background: rgba(226,164,0,.4);
+}
